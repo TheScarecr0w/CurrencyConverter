@@ -15,7 +15,7 @@ export default function InputValue({ rate }) {
             const converted = (parseFloat(value) * rate).toFixed(2);
             setResult(converted);
         } else {
-            Alert.alert('USD Converter', 'Нужно ввести сумму в USD');
+            Alert.alert('Converter', 'Нужно ввести сумму');
         }
     }
 
@@ -29,7 +29,7 @@ export default function InputValue({ rate }) {
                 onChangeText={onChangeHandler}
             />
             <Button title={'Конвертировать'} color={'blue'} onPress={onPressHandler} />
-            {result !== null && <Text style={styles.OutResult}>Сумма USD в RUB: {result}</Text>}  {}
+            {result !== null && <Text style={styles.OutResult}>Сумма в RUB: {result}</Text>}  {}
         </View>
     );
 }
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     Input: {
+        paddingTop: 20,
         borderBottomWidth: 1,
         minWidth: '60%',
         textAlign: 'center',
